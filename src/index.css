@@ -1,3 +1,108 @@
+/* Estilos generales para la página de Home */
+main {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* Título principal de la página */
+h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Título secundario */
+h2 {
+  font-size: 2rem;
+  color: #555;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+/* Estilos generales para el grid de cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Estilos para las cards */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 250px;
+  margin: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Efecto hover de la card */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de la card */
+.card .doctor-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Títulos y descripción dentro de la card */
+.card h3 {
+  font-size: 1.2rem;
+  margin: 15px;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Estilo para el botón de favoritos */
+.favButton {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  width: 100%;
+}
+
+.favButton:hover {
+  background-color: #e53e28;
+}
+
+/* Estilo para los enlaces dentro de las cards */
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,7 +116,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.favButton{
+
+.favButton {
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
   border: none;
@@ -19,91 +125,297 @@ code {
   cursor: pointer;
 }
 
-h1{
+h1 {
   text-align: center;
 }
 
-nav{
+/* Barra de navegación */
+/* Navbar container */
+nav {
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
-  padding: 1rem;
+  justify-content: space-between; /* Separa el logo de los enlaces */
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-a{
-  color: #000;
-  text-decoration: none;
-  margin: 5px;
+/* Logo (h1) */
+nav h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   cursor: pointer;
 }
-a:hover{
+
+/* Navbar links */
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff6347; /* Rojo tomate en hover */
+}
+
+/* Estilos para el modo oscuro (si está habilitado) */
+nav.dark {
+  background-color: #121212;
+  color: white;
+}
+
+nav.dark ul li a {
+  color: white;
+}
+
+nav.dark ul li a:hover {
+  color: #ff6347;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
   color: rgb(136, 136, 136);
-} 
+}
+
+/* Estilos generales para la página de Home */
+main {
+  padding: 1px 1px;
+  text-align: center;
+}
+
+/* Títulos y textos */
+h2 {
+  font-size: 2rem;
+  color: #555;
+  margin-top: 1px;
+  margin-bottom: 2px;
+}
+
+/* Estilos generales para el grid de cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+}
 
 footer {
   display: flex;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  gap: 1rem;  /* Espaciado entre las imágenes */
   padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+  width: 100%;
 }
 
-footer > img{
-  width: 200px;
-  margin: 0;
+footer .dh-logo {
+  width: 300px; /* Tamaño más grande para el logo DH */
+  height: auto;
 }
-footer > p{
+
+footer img {
+  width: 30px;  /* Tamaño de las imágenes de redes sociales */
+  height: auto;
+  margin: 0 10px;  /* Espacio entre las imágenes */
+}
+
+footer p {
   margin: 0;
   padding-top: 0.7rem;
 }
 
-form{
+footer a {
+  display: inline-block;  /* Asegura que las imágenes estén alineadas correctamente */
+}
+
+/* Estilos generales para el formulario de contacto */
+form {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
+  gap: 15px;
+  width: 350px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
+/* Estilo de los campos del formulario */
+input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+input:focus {
+  outline: none;
+  border-color: #ff6347;  /* Color de foco en el borde */
 }
 
-.card-grid{
-  display: flex;
-  justify-content: space-evenly;
-  gap: 1rem;
-  width: 90vw;
-  height: auto;
-  flex-wrap: wrap;
-  margin: 0 auto;
+/* Estilo del botón de envío */
+button {
+  background-color: #ff6347;  /* Rojo tomate */
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+button:hover {
+  background-color: #e53e28;  /* Hover más oscuro */
+}
+
+/* Estilo para los mensajes de error y éxito */
+p {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+/* Títulos y encabezados */
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* Estilos para el contenedor de las cards */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 250px;
+  margin: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Efecto de elevación al pasar el mouse */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la imagen del doctor */
+.card .doctor-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
+}
+
+/* Estilos para el contenido del card */
+.card h3 {
+  font-size: 1.2rem;
+  margin: 15px;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Estilos para el botón de favoritos */
+.favButton {
+  background-color: #ff6347; /* Rojo tomate */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  width: 100%;
+}
+
+.favButton:hover {
+  background-color: #e53e28; /* Color de hover más oscuro */
+}
+
+/* Estilo para los enlaces */
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Estilos generales para el grid de cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
 
 table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid #ccc;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -113,10 +425,69 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark{
+.dark {
   background-color: #12121296;
   color: white;
 }
+
 .dark > a {
   color: white;
+}
+
+
+.doctor-image {
+  width: 100px;  
+  height: auto;  
+}
+/* Estilos para el contenedor principal de la página de detalle */
+.detail-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el encabezado del detalle */
+.detail-container h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+/* Estilos para los párrafos dentro de la página de detalle */
+.detail-container p {
+  font-size: 1rem;
+  color: #666;
+  margin: 10px 0;
+}
+
+/* Estilos para el enlace de la web del dentista */
+.detail-container a {
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.detail-container a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos de la imagen del dentista (si la agregas) */
+.detail-container .doctor-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el contenedor de la información del dentista */
+.detail-container .info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
