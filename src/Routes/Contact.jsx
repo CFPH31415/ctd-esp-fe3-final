@@ -5,23 +5,18 @@ const Contact = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  // Maneja los cambios de los inputs
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  // Maneja el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Validación de datos
     if (formData.name.length < 5 || !/\S+@\S+\.\S+/.test(formData.email)) {
       setError('Por favor verifique su información nuevamente');
       setSuccess('');
     } else {
       setError('');
-      setSuccess(`Gracias ${formData.name}, te contactaremos cuando antes vía mail`);
-      console.log(formData);  // En un escenario real, aquí se enviaría la información a un servidor
+      setSuccess(`Gracias ${formData.name}, Te contactaremos cuando antes vía mail`);
+      console.log(formData);  
     }
   };
 

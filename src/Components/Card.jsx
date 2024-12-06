@@ -11,7 +11,6 @@ const Card = ({ name, username, id }) => {
       ? state.favs.filter((fav) => fav.id !== id)
       : [...state.favs, { name, username, id }];
     
-    // Actualizamos el estado global y LocalStorage
     dispatch({ type: 'ADD_FAV', payload: updatedFavorites });
     localStorage.setItem('favs', JSON.stringify(updatedFavorites));
   };
@@ -22,7 +21,7 @@ const Card = ({ name, username, id }) => {
     <div className="card">
       <img src="/images/doctor.jpg" alt="Doctor" className="doctor-image" />
       <h3>
-        <Link to={`/dentist/${id}`}>{name}</Link>  {/* Hacemos que el nombre sea un enlace */}
+        <Link to={`/dentist/${id}`}>{name}</Link>
       </h3>
       <p>{username}</p>
       <button onClick={addFav} className="favButton">
